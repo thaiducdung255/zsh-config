@@ -1,0 +1,40 @@
+# nav aliases
+alias code="vim -o \`fzf\`"
+alias cvim="cd ~/.config/nvim"
+alias comz="cd ~/.oh-my-zsh/"
+alias cspe="cd ~/.config/.spectrwm/"
+alias "."="cd .."
+alias ".."="cd ../.."
+alias "/"="cd"
+alias "?"="alias | fzf --preview=''"
+alias "h"="history | fzf --preview=''"
+
+alias 'v'="vi"
+alias 'npr'="unset no_proxy && unset http_proxy && unset https_proxy"
+
+# git aliases
+alias ggs="git status"
+alias gbr="git branch"
+alias gga="git add ."
+alias ggc="git commit"
+alias ggh="git push"
+alias ggl="git pull"
+alias ggd="git diff"
+alias ggo="git log"
+alias ggm="git blame"
+
+alias fan="sudo bash ~/.config/qtile/.init-scripts/fan-speed.sh"
+
+function ggu {
+  git add .
+  git commit -m "$1"
+  git push
+}
+
+function spr {
+   export http_proxy=http://proxy.hcm.fpt.vn:80/
+   export https_proxy=http://proxy.hcm.fpt.vn:80/
+   export https_proxexport no_proxy='localhost, 127.0.0.1, 172.30.12.155, 172.30.12.*, 172.27.131.232, 172.27.228.*, ticketopsapi.fpt.vn, 118.70.79.44, 172.27.228.161, onlinereceipt.fpt.vn'y=http://proxy.hcm.fpt.vn:80/
+}
+
+alias sccvpn="sudo openvpn --config /home/df/Apps/client.ovpn --auth-user-pass --auth-retry interact"
