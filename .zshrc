@@ -199,4 +199,7 @@ PERL_MB_OPT="--install_base \"/home/df/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/df/perl5"; export PERL_MM_OPT;
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
 
+export DENO_INSTALL="/home/df/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+
 alias luamake=/home/df/Apps/lua-language-server/3rd/luamake/luamake
