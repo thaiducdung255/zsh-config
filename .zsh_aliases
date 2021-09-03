@@ -39,3 +39,4 @@ function spr {
 
 alias sccvpn="sudo openvpn --config /home/df/Apps/client.ovpn --auth-user-pass --auth-retry interact"
 alias lg="lazygit"
+alias wifi="nmcli dev wifi"
