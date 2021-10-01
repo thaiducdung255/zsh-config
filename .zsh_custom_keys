@@ -3,12 +3,13 @@ bindkey "\el" autosuggest-accept
 bindkey ";" autosuggest-execute
 
 # text-modifier keys
-bindkey "^h" backward-delete-word
+bindkey "^[u" backward-delete-word
 
-bindkey "^j" backward-word
-bindkey "^k" forward-word
-
-bindkey "^q" kill-line
+bindkey "^[i" backward-word
+bindkey "^[o" backward-char
+bindkey "^[p" forward-char
+bindkey "^[[" forward-word
+# bindkey "^q" kill-line
 
 # fzf custom keys
 

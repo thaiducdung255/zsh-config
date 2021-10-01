@@ -166,7 +166,7 @@ autoload -U compinit && compinit -u
 export EDITOR=vim
 
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting vi-mode)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -191,6 +191,11 @@ eval "`fnm env`"
 # fnm
 export PATH=/home/df/.fnm:$PATH
 eval "`fnm env`"
+
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
 
 PATH="/home/df/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/df/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
