@@ -97,13 +97,6 @@ unset __conda_setup
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -163,7 +156,8 @@ export FZF_ALT_C_COMMAND='fdfind -t d . $HOME'
 autoload -U compinit && compinit -u
 
 # set default editor to vim
-export EDITOR=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)

@@ -1,15 +1,11 @@
 # nav aliases
-alias code="vim -o \`fzf\`"
-alias cvim="cd ~/.config/nvim"
-alias comz="cd ~/.oh-my-zsh/"
-alias cspe="cd ~/.config/.spectrwm/"
 alias "."="cd .."
 alias ".."="cd ../.."
 alias "/"="cd"
 alias "?"="alias | fzf --preview=''"
 alias "h"="history | fzf --preview=''"
 
-alias 'v'="vi"
+alias 'vi'="nvim"
 alias 'npr'="unset no_proxy && unset http_proxy && unset https_proxy"
 
 # git aliases
