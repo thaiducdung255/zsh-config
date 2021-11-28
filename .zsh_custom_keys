@@ -9,7 +9,7 @@ bindkey "^[i" backward-word
 bindkey "^[o" backward-char
 bindkey "^[p" forward-char
 bindkey "^[[" forward-word
-# bindkey "^q" kill-line
+bindkey "^q" kill-line
 
 # fzf custom keys
 
