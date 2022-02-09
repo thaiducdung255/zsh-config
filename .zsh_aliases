@@ -50,6 +50,7 @@ function spr {
 }
 
 alias sccvpn="~/.scripts/scc-vpn-auth.sh"
+alias psn="~/.scripts/update-pacman+nvim.sh"
 alias lg="lazygit"
 alias wifi="nmcli dev wifi"
 alias ls="exa --long"
