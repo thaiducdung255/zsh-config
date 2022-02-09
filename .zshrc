@@ -178,14 +178,6 @@ source $HOME/.config/zsh/.zsh_aliases
 # bindkey
 source $HOME/.config/zsh/.zsh_custom_keys
 
-# fnm auto load
-export PATH=/home/df/.fnm:$PATH
-eval "`fnm env`"
-
-# fnm
-export PATH=/home/df/.fnm:$PATH
-eval "`fnm env`"
-
 zstyle ':completion:*' matcher-list '' \
   'm:{a-z\-}={A-Z\_}' \
   'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
@@ -202,3 +194,7 @@ export DENO_INSTALL="/home/df/.deno"
   export PATH="$DENO_INSTALL/bin:$PATH"
 
 alias luamake=/home/df/Apps/lua-language-server/3rd/luamake/luamake
+
+# fnm
+export PATH=/home/dh/.fnm:$PATH
+eval "`fnm env`"
