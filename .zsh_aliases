@@ -9,31 +9,42 @@ alias 'vi'="nvim"
 alias 'npr'="unset no_proxy && unset http_proxy && unset https_proxy"
 
 # git aliases
-alias ggs="git status"
+alias gst="git status"
 alias gbr="git branch"
-alias gga="git add ."
-alias ggc="git commit"
-alias ggh="git push"
-alias ggl="git pull"
-alias ggd="git diff"
-alias ggo="git log"
-alias ggm="git blame"
+alias gad="git add ."
+alias gco="git commit"
+alias gpu="git push"
+alias gpl="git pull"
+alias gdi="git diff"
+alias glo="git log"
+alias gbl="git blame"
+alias gck="git checkout"
 
 # docker aliases
 alias dp="docker ps -a | docker-color-output"
-alias dpp="docker ps | docker-color-output"
+alias dP="docker ps | docker-color-output"
 alias dl="docker logs -f"
-alias dll="docker logs"
-alias dg="docker pull "
-alias dim="docker images | docker-color-output"
+alias dL="docker logs"
+alias dl="docker pull "
 alias db="docker build"
-alias dri="docker rmi"
 alias drm="docker rm"
 alias dr="docker run"
 alias dx="docker exec"
-alias dk="docker stop"
-alias di="docker start"
-alias dd="docker-compose"
+alias dS="docker stop"
+alias ds="docker start"
+alias dc="docker-compose"
+
+# docker image aliases
+alias di="docker images | docker-color-output"
+alias dri="docker rmi"
+
+# docker compose aliases
+alias dcu="docker-compose up"
+alias dcd="docker-compose down"
+
+# docker volume aliases
+alias dvl="docker volume ls"
+alias dvp="docker volume prune"
 
 alias fan="sudo bash ~/.config/qtile/.init-scripts/fan-speed.sh"
 

@@ -13,11 +13,6 @@ export ZSH=$HOME/.oh-my-zsh
 export GOPATH=$HOME/go
 export BAT_THEME="Dracula"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
@@ -178,13 +173,9 @@ source $HOME/.config/zsh/.zsh_aliases
 # bindkey
 source $HOME/.config/zsh/.zsh_custom_keys
 
-# fnm auto load
-export PATH=/home/df/.fnm:$PATH
-eval "`fnm env`"
-
 # fnm
 export PATH=/home/df/.fnm:$PATH
-eval "`fnm env`"
+eval "`fnm env --use-on-cd`"
 
 zstyle ':completion:*' matcher-list '' \
   'm:{a-z\-}={A-Z\_}' \
@@ -202,3 +193,8 @@ export DENO_INSTALL="/home/df/.deno"
   export PATH="$DENO_INSTALL/bin:$PATH"
 
 alias luamake=/home/df/Apps/lua-language-server/3rd/luamake/luamake
+
+export KEYBOARD_LAYOUT=colemak
+
+export PNPM_HOME="/home/df/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
