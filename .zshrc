@@ -174,8 +174,11 @@ source $HOME/.config/zsh/.zsh_aliases
 source $HOME/.config/zsh/.zsh_custom_keys
 
 # fnm
-export PATH=/home/df/.fnm:$PATH
+export PATH=~/.fnm:$PATH
 eval "`fnm env --use-on-cd`"
+
+export PNPM_HOME="~/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 zstyle ':completion:*' matcher-list '' \
   'm:{a-z\-}={A-Z\_}' \
