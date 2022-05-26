@@ -57,7 +57,7 @@ function ggu {
 function spr {
    export http_proxy=http://proxy.hcm.fpt.vn:80/
    export https_proxy=http://proxy.hcm.fpt.vn:80/
-   export https_proxexport no_proxy='localhost, 127.0.0.1, 172.30.12.155, 172.30.12.*, 172.27.131.232, 172.27.228.*, ticketopsapi.fpt.vn, 118.70.79.44, 172.27.228.161, onlinereceipt.fpt.vn'y=http://proxy.hcm.fpt.vn:80/
+   export no_proxy='localhost, 127.0.0.1, 172.30.12.155, 172.30.12.*, 172.27.131.232, 172.27.228.*, ticketopsapi.fpt.vn, 118.70.79.44, 172.27.228.161, onlinereceipt.fpt.vn'y=http://proxy.hcm.fpt.vn:80/
 }
 
 alias sccvpn="~/.scripts/scc-vpn-auth.sh"

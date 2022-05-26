@@ -182,19 +182,4 @@ zstyle ':completion:*' matcher-list '' \
   'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
 
-PATH="/home/df/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/df/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/df/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/df/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/df/perl5"; export PERL_MM_OPT;
-export PATH=$HOME/.config/nvcode/utils/bin:$PATH
-
-export DENO_INSTALL="/home/df/.deno"
-  export PATH="$DENO_INSTALL/bin:$PATH"
-
-alias luamake=/home/df/Apps/lua-language-server/3rd/luamake/luamake
-
 export KEYBOARD_LAYOUT=colemak
-
-export PNPM_HOME="/home/df/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
