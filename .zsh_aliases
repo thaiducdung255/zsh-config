@@ -6,7 +6,6 @@ alias "?"="alias | fzf --preview=''"
 alias "h"="history | fzf --preview=''"
 
 alias 'vi'="nvim"
-alias 'npr'="unset no_proxy && unset http_proxy && unset https_proxy"
 
 # git aliases
 alias gst="git status"
@@ -21,8 +20,10 @@ alias gbl="git blame"
 alias gck="git checkout"
 
 # docker aliases
-alias dp="docker ps -a | docker-color-output"
-alias dP="docker ps | docker-color-output"
+# alias dp="docker ps -a | docker-color-output"
+# alias dP="docker ps | docker-color-output"
+alias dp="docker ps -a"
+alias dP="docker ps"
 alias dl="docker logs -f"
 alias dL="docker logs"
 alias dl="docker pull "
@@ -32,15 +33,15 @@ alias dr="docker run"
 alias dx="docker exec"
 alias dS="docker stop"
 alias ds="docker start"
-alias dc="docker-compose"
 
 # docker image aliases
 alias di="docker images | docker-color-output"
 alias dri="docker rmi"
 
 # docker compose aliases
-alias dcu="docker-compose up"
-alias dcd="docker-compose down"
+alias dc="docker compose ps -a"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
 
 # docker volume aliases
 alias dvl="docker volume ls"
@@ -54,14 +55,10 @@ function ggu {
   git push
 }
 
-function spr {
-   export http_proxy=http://proxy.hcm.fpt.vn:80/
-   export https_proxy=http://proxy.hcm.fpt.vn:80/
-   export no_proxy='localhost, 127.0.0.1, 172.30.12.155, 172.30.12.*, 172.27.131.232, 172.27.228.*, ticketopsapi.fpt.vn, 118.70.79.44, 172.27.228.161, onlinereceipt.fpt.vn'y=http://proxy.hcm.fpt.vn:80/
-}
-
 alias sccvpn="~/.scripts/scc-vpn-auth.sh"
 alias psn="~/.scripts/update-pacman+nvim.sh"
 alias lg="lazygit"
 alias wifi="nmcli dev wifi"
 alias ls="exa --long"
+alias ks="kitty +kitten ssh"
+alias upnpm="pnpm i -g pnpm"

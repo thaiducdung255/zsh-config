@@ -175,7 +175,7 @@ source $HOME/.config/zsh/.zsh_custom_keys
 
 # fnm
 export PATH=~/.fnm:$PATH
-eval "`fnm env --use-on-cd`"
+eval "`fnm --version-file-strategy=recursive --log-level=quiet env --use-on-cd`"
 
 export PNPM_HOME="~/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -186,3 +186,5 @@ zstyle ':completion:*' matcher-list '' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
 
 export KEYBOARD_LAYOUT=colemak
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
