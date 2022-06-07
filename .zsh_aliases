@@ -26,7 +26,7 @@ alias dp="docker ps -a"
 alias dP="docker ps"
 alias dl="docker logs -f"
 alias dL="docker logs"
-alias dl="docker pull "
+alias dpl="docker pull "
 alias db="docker build"
 alias drm="docker rm"
 alias dr="docker run"
@@ -35,7 +35,8 @@ alias dS="docker stop"
 alias ds="docker start"
 
 # docker image aliases
-alias di="docker images | docker-color-output"
+# alias di="docker images | docker-color-output"
+alias di="docker images"
 alias dri="docker rmi"
 
 # docker compose aliases
