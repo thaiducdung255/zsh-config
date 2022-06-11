@@ -188,3 +188,5 @@ zstyle ':completion:*' matcher-list '' \
 export KEYBOARD_LAYOUT=colemak
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export LC_ALL="en_US.UTF-8"
