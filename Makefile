@@ -1,5 +1,5 @@
 install:
-	sudo pacman -S --noconfirm exa docker jq docker-compose unzip
+	sudo pacman -S --noconfirm exa docker jq docker-compose unzip btop
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	curl -fsSL https://fnm.vercel.app/install | bash
 	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
