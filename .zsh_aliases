@@ -48,7 +48,11 @@ alias dcd="docker compose down"
 alias dvl="docker volume ls"
 alias dvp="docker volume prune"
 
+# fan aliases
 alias fan="sudo bash ~/.config/qtile/.init-scripts/fan-speed.sh"
+
+# pacman aliase
+alias psn="sudo pacman -Rs $(pacman -Qtdq)"
 
 function ggu {
   git add .
@@ -57,9 +61,7 @@ function ggu {
 }
 
 alias sccvpn="~/.scripts/scc-vpn-auth.sh"
-alias psn="~/.scripts/update-pacman+nvim.sh"
 alias lg="lazygit"
-alias wifi="nmcli dev wifi"
 alias ls="exa --long"
 alias top="btop"
 alias ks="kitty +kitten ssh"
