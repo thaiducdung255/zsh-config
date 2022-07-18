@@ -192,8 +192,15 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export LC_ALL="en_US.UTF-8"
 
 # bun completions
-[ -s "/home/mdd255/.bun/_bun" ] && source "/home/mdd255/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Bun
-export BUN_INSTALL="/home/mdd255/.bun"
+export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun completions
+[ -s "/home/dungtd10/.bun/_bun" ] && source "/home/dungtd10/.bun/_bun"
+
+# fnm
+export PATH=/home/dungtd10/.fnm:$PATH
+eval "`fnm env`"
