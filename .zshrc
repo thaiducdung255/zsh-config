@@ -112,7 +112,7 @@ export QT_IM_MODULE=ibus
 
 # enable fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' \
+export FZF_DEFAULT_OPTS="--preview-window 'right:60%' \
   --layout reverse \
   --margin=1,4 \
   --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
