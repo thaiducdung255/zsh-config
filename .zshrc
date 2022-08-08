@@ -158,14 +158,15 @@ export VISUAL=nvim
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+[ -s /etc/zsh/zprofile ] && source "/etc/zsh/zprofile"
 
 # active zle
-example-zle-widget(){
+# example-zle-widget(){
   # Adds to the built-in LBUFFER variable the word "HEY"
-  LBUFFER="${LBUFFER}HEY"
-}
-zle -N example-zle-widget
-bindkey '^E' example-zle-widget
+  # LBUFFER="${LBUFFER}HEY"
+# }
+# zle -N example-zle-widget
+# bindkey '^E' example-zle-widget
 
 # User configuration
 source $HOME/.config/zsh/.zsh_aliases
@@ -185,8 +186,6 @@ zstyle ':completion:*' matcher-list '' \
   'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
 
-export KEYBOARD_LAYOUT=colemak
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export LC_ALL="en_US.UTF-8"
@@ -197,10 +196,3 @@ export LC_ALL="en_US.UTF-8"
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# bun completions
-[ -s "/home/dungtd10/.bun/_bun" ] && source "/home/dungtd10/.bun/_bun"
-
-# fnm
-export PATH=/home/dungtd10/.fnm:$PATH
-eval "`fnm env`"
