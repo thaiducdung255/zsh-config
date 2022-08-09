@@ -15,6 +15,8 @@ font-install:
 
 fnm-install:
 	curl -fsSL https://fnm.vercel.app/install | bash
+	npm i -g @commitlint/cli @commitlint/config-conventional
+	echo "module.exports = {extends: ['@commitlint/config-conventional']}" > ~/commitlint.config.js
 
 extra-packs-install:
 	sudo pacman -S --noconfirm exa docker jq docker-compose unzip btop ibus go
@@ -27,5 +29,5 @@ extra-packs-install:
 install:
 	make zsh-install
 	make font-install
-	make extra-packs-install
 	make fnm-install
+	make extra-packs-install

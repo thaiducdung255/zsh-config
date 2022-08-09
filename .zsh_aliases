@@ -56,7 +56,7 @@ alias psn="sudo pacman -Rs $(pacman -Qtdq)"
 
 function ggu {
   git add .
-  git commit -m "$1"
+  git commit -m "$1" | commitlint
   git push
 }
 
