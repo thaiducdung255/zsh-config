@@ -51,14 +51,29 @@ alias dvp="docker volume prune"
 # fan aliases
 alias fan="sudo bash ~/.config/qtile/.init-scripts/fan-speed.sh"
 
-# pacman aliase
-alias psn="sudo pacman -Rs $(pacman -Qtdq)"
+# pacman aliases
+alias psn="sudo pacman -Rs $(pacman -Qtdq);yay -Rs $(pacman -Qtdq)"
 
 function ggu {
-  git add .
-  git commit -m "$1" | commitlint
-  git push
+   lint_result=$(echo $1 | commitlint | grep ✖)
+
+   if [[ -z $lint_result ]] then
+      git add .
+      git commit -m "$1"
+      git push
+   else
+      echo "commit msg not valid:"
+      echo $lint_result
+   fi
 }
+
+# zipped file aliases
+function ztac {
+   zcat $1 | tac
+}
+
+alias ztail="zcat $1 | tail"
+alias zhead="zcat $1 | head"
 
 alias sccvpn="~/.scripts/scc-vpn-auth.sh"
 alias lg="lazygit"
