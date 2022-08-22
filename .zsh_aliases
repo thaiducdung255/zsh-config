@@ -60,6 +60,7 @@ function ggu {
    if [[ -z $lint_result ]] then
       git add .
       git commit -m "$*"
+      git pull
       git push
    else
       echo "commit msg not valid:"
