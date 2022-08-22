@@ -55,11 +55,11 @@ alias fan="sudo bash ~/.config/qtile/.init-scripts/fan-speed.sh"
 alias psn="sudo pacman -Rs $(pacman -Qtdq);yay -Rs $(pacman -Qtdq)"
 
 function ggu {
-   lint_result=$(echo $1 | commitlint | grep ✖)
+   lint_result=$(echo $* | commitlint | grep ✖)
 
    if [[ -z $lint_result ]] then
       git add .
-      git commit -m "$1"
+      git commit -m "$*"
       git push
    else
       echo "commit msg not valid:"
@@ -80,4 +80,4 @@ alias lg="lazygit"
 alias ls="exa --long"
 alias top="btop"
 alias ks="kitty +kitten ssh"
-alias upnpm="pnpm i -g pnpm"
+alias upnpm="pnpm i -g pnpm && rm -rf '~'"
