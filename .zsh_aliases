@@ -52,7 +52,7 @@ alias dvp="docker volume prune"
 alias fan="sudo bash ~/.config/qtile/.init-scripts/fan-speed.sh"
 
 # pacman aliases
-alias psn="sudo pacman -Rs $(pacman -Qtdq);yay -Rs $(pacman -Qtdq)"
+alias psn="sudo pacman -Suy && yay -Suy && sudo pacman -Rs $(pacman -Qtdq);yay -Rs $(pacman -Qtdq)"
 
 function ggu {
    lint_result=$(echo $* | commitlint | grep ✖)

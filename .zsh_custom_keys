@@ -12,58 +12,51 @@ bindkey "^[[" forward-word
 bindkey "^q" kill-line
 
 # fzf custom keys
-ignored_paths="
+fd_extra_args="
+   --hidden .\
+   --ignore-case\
 	--exclude node_modules\
 	--exclude .fnm\
 	--exclude .npm\
-	--exclude BraveSoftware\
 	--exclude .cache\
-	--exclude .autojump\
-	--exclude .node-gyp\
-	--exclude .gem\
-	--exclude .gnome\
+	--exclude gem\
 	--exclude skypeforlinux\
 	--exclude Postman\
-	--exclude .local\
 	--exclude Rambox\
 	--exclude .git\
-	--exclude .vim\
-	--exclude .esy\
 	--exclude .var\
 	--exclude libreoffice\
 	--exclude google-chrome\
 	--exclude proc\
 	--exclude themes\
 	--exclude plugins\
-	--exclude github.com\
-	--exclude golang.org\
-	--exclude gopkg.in\
-	--exclude go.uber.org\
-	--exclude config/pulse\
-	--exclude dotfiles\
-	--exclude ranger/ranger\
+	--exclude .icons\
+	--exclude .docker\
+	--exclude .bun\
+	--exclude .java\
+	--exclude .pki\
+	--exclude .oh-my-zsh\
+	--exclude /go/\
+	--exclude /.config/BraveSoftware\
+	--exclude Steam\
+	--exclude pnpm\
+	--exclude pack\
+	--exclude TabNine\
+	--exclude /.local/lib\
 	"
 
 # fzf edit file
 fzf-vi() {
-	LBUFFER="${LBUFFER}vi $(
-		fd --type f --hidden .
-			--ignore-case \
-		${HOME} | fzf)"
+	LBUFFER="$LBUFFER vi $(fd --type d $(echo $fd_extra_args) $HOME | fzf --preview '')"
 		zle accept-line
 }
 zle -N fzf-vi
 bindkey "\e;" fzf-vi
 
-function hey {
-	echo $*
-	echo "fd $fd_opts ${HOME}"
-}
-
 # fzf auto cd
 fzf-cd () {
-  LBUFFER="$LBUFFER cd $(fd -t d -H . -i $ignored_paths $HOME | fzf --preview '')"
-  zle accept-line
+   LBUFFER="$LBUFFER cd $(fd --type d $(echo $fd_extra_args) $HOME | fzf --preview '')"
+   zle accept-line
 }
 
 zle -N fzf-cd
@@ -71,76 +64,16 @@ bindkey "\e " fzf-cd
 
 # fzf-get file's path
 fzf-file(){
-  LBUFFER="${LBUFFER}$(fd --type f --hidden . --ignore-case \
-	 --exclude node_modules \
-	 --exclude .fnm \
-	 --exclude .npm \
-	 --exclude BraveSoftware \
-	 --exclude .cache \
-	 --exclude .autojump \
-	 --exclude .node-gyp \
-	 --exclude .gem \
-	 --exclude .gnome \
-	 --exclude skypeforlinux \
-	 --exclude Postman \
-	 --exclude .local \
-	 --exclude Rambox \
-	 --exclude .git \
-	 --exclude .vim \
-	 --exclude .esy \
-	 --exclude .var \
-	 --exclude libreoffice \
-	 --exclude google-chrome \
-	 --exclude proc \
-	 --exclude themes \
-	 --exclude config/pulse \
-	 --exclude dotfiles \
-	 --exclude plugins \
-	 --exclude github.com \
-	 --exclude golang.org \
-	 --exclude gopkg.in \
-	 --exclude go.uber.org \
-	 --exclude config/pulse \
-	 --exclude ranger/ranger \
-	 ${HOME} | fzf)"
+  LBUFFER="$LBUFFER $(fd --type f $(echo $fd_extra_args) $HOME | fzf)"
 }
+
 zle -N fzf-file
 bindkey "\ef" fzf-file
 
 # fzf-get dir's path
 fzf-dir(){
-  LBUFFER="${LBUFFER}$(fd --type d --hidden . --ignore-case \
-	 --exclude node_modules \
-	 --exclude .fnm \
-	 --exclude .npm \
-	 --exclude BraveSoftware \
-	 --exclude .cache \
-	 --exclude .autojump \
-	 --exclude .node-gyp \
-	 --exclude .gem \
-	 --exclude .gnome \
-	 --exclude skypeforlinux \
-	 --exclude Postman \
-	 --exclude .local \
-	 --exclude Rambox \
-	 --exclude .git \
-	 --exclude .vim \
-	 --exclude .esy \
-	 --exclude .var \
-	 --exclude libreoffice \
-	 --exclude google-chrome \
-	 --exclude proc \
-	 --exclude themes \
-	 --exclude config/pulse \
-	 --exclude dotfiles \
-	 --exclude plugins \
-	 --exclude github.com \
-	 --exclude golang.org \
-	 --exclude gopkg.in \
-	 --exclude go.uber.org \
-	 --exclude config/pulse \
-	 --exclude ranger/ranger \
-	 ${HOME} | fzf --preview '')"
+  LBUFFER="$LBUFFER $(fd --type d $(echo $fd_extra_args) $HOME | fzf --preview '')"
 }
+
 zle -N fzf-dir
 bindkey "\ed" fzf-dir
