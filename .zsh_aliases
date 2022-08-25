@@ -55,7 +55,7 @@ alias fan="sudo bash ~/.config/qtile/.init-scripts/fan-speed.sh"
 alias psn="sudo pacman -Suy && yay -Suy && sudo pacman -Rs $(pacman -Qtdq);yay -Rs $(pacman -Qtdq)"
 
 function ggu {
-   lint_result=$(echo $* | commitlint | grep ✖)
+   lint_result=$(echo "$*" | commitlint | grep ✖)
 
    if [[ -z $lint_result ]] then
       git add .
