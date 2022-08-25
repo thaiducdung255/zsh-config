@@ -54,7 +54,7 @@ alias fan="sudo bash ~/.config/qtile/.init-scripts/fan-speed.sh"
 # pacman aliases
 alias psn="sudo pacman -Suy && yay -Suy && sudo pacman -Rs $(pacman -Qtdq);yay -Rs $(pacman -Qtdq)"
 
-function ggu {
+function git_ultimate {
    lint_result=$(echo "$*" | commitlint | grep ✖)
 
    if [[ -z $lint_result ]] then
@@ -67,6 +67,8 @@ function ggu {
       echo $lint_result
    fi
 }
+
+alias ggu="noglob git_ultimate"
 
 # zipped file aliases
 function ztac {
