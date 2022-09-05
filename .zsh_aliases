@@ -1,6 +1,6 @@
 # nav aliases
-alias "."="cd .."
-alias ".."="cd ../.."
+alias ".."="cd .."
+alias "..."="cd ../.."
 alias "/"="cd"
 alias "?"="alias | fzf --preview=''"
 alias "h"="history | fzf --preview=''"
