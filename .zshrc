@@ -155,7 +155,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting pipenv)
 
 source $ZSH/oh-my-zsh.sh
 [ -s /etc/zsh/zprofile ] && source "/etc/zsh/zprofile"
