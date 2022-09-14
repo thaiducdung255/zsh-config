@@ -47,7 +47,7 @@ fd_extra_args="
 
 # fzf edit file
 fzf-vi() {
-	LBUFFER="$LBUFFER vi $(fd --type d $(echo $fd_extra_args) $HOME | fzf --preview '')"
+	LBUFFER="$LBUFFER vi $(fd --type f $(echo $fd_extra_args) $HOME | fzf --preview '')"
 		zle accept-line
 }
 zle -N fzf-vi
