@@ -41,7 +41,7 @@ alias dri="docker rmi"
 
 # docker compose aliases
 alias dc="docker compose ps -a | docker-color-output"
-alias dcu="docker compose up"
+alias dcu="docker compose up --build"
 alias dcb="docker compose build"
 alias dcd="docker compose down"
 
