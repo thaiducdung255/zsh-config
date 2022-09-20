@@ -30,7 +30,7 @@ alias dpl="docker pull "
 alias db="docker build"
 alias drm="docker rm"
 alias dr="docker run"
-alias dx="docker exec -it"
+alias dx="docker exec -it $@"
 alias dS="docker stop"
 alias ds="docker start"
 
@@ -52,9 +52,13 @@ alias dvp="docker volume prune"
 # fan aliases
 alias fan="sudo bash ~/.config/qtile/.init-scripts/fan-speed.sh"
 
+# pipenv aliases
+alias pir="pipenv run $@"
+
 # pacman aliases
 alias psn="sudo pacman -Suy && yay -Suy && sudo pacman -Rs $(pacman -Qtdq);yay -Rs $(pacman -Qtdq)"
 
+# git add | commit | pull | push all in one
 function git_ultimate {
    lint_result=$(echo "$*" | commitlint | grep ✖)
 
