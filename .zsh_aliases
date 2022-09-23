@@ -55,6 +55,7 @@ alias fan="sudo bash ~/.config/qtile/.init-scripts/fan-speed.sh"
 # pipenv aliases
 alias pir="pipenv run $@"
 alias pii="pipenv install $@"
+alias piu="pipenv uninstall $@"
 
 # pacman aliases
 alias psn="sudo pacman -Suy && yay -Suy && sudo pacman -Rs $(pacman -Qtdq);yay -Rs $(pacman -Qtdq)"
