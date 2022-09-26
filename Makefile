@@ -15,7 +15,7 @@ font-install:
 
 fnm-install:
 	curl -fsSL https://fnm.vercel.app/install | bash
-	npm i -g @commitlint/cli @commitlint/config-conventional
+	npm i -g @commitlint/{cli,config-conventional}
 	echo "module.exports = {extends: ['@commitlint/config-conventional']}" > ~/commitlint.config.js
 
 extra-packs-install:
