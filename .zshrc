@@ -122,33 +122,27 @@ export FZF_DEFAULT_COMMAND='ag -g "" \
   --skip-vcs-ignores \
   --ignore ".git/*" \
   --ignore "build/*" \
-  --ignore ".local/*" \
-  --ignore ".cache/*" \
   --ignore ".vim/*" \
   --ignore "package-lock.json" \
   --ignore ".idea/*" \
   --ignore "skypeforlinux/*" \
   --ignore "MongoDB Compass/*" \
   --ignore "libreoffice/*" \
-  --ignore "Rambox/*" \
   --ignore "Postman/*" \
   --ignore ".npm/*" \
-  --ignore ".fnm/*" \
+  --ignore "virtualenvs/*" \
   --ignore "BraveSoftware" \
   --ignore ".gem" \
-  --ignore "autojump" \
+  --ignore ".mypy_cache/*" \
   --ignore "node_modules/*" \
   --ignore ".oh-my-zsh/plugins" \
+  --ignore ".memestra/*" \
   --ignore "node_modules/*"'
 export FZF_CONTROL_T_COMMAND='fd . $HOME'
 export FZF_ALT_C_COMMAND='fdfind -t d . $HOME'
 
 # enable vi mode
 # set -o vi
-
-# enable autojump
-[[ -s /home/df/.autojump/etc/profile.d/autojump.sh ]] && source /home/df/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
 
 # set default editor to vim
 export EDITOR=nvim
@@ -159,14 +153,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting pipenv)
 
 source $ZSH/oh-my-zsh.sh
 [ -s /etc/zsh/zprofile ] && source "/etc/zsh/zprofile"
-
-# active zle
-# example-zle-widget(){
-  # Adds to the built-in LBUFFER variable the word "HEY"
-  # LBUFFER="${LBUFFER}HEY"
-# }
-# zle -N example-zle-widget
-# bindkey '^E' example-zle-widget
 
 # User configuration
 source $HOME/.config/zsh/.zsh_aliases

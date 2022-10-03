@@ -5,7 +5,7 @@ alias "/"="cd"
 alias "?"="alias | fzf --preview=''"
 alias "h"="history | fzf --preview=''"
 
-alias 'vi'="nvim"
+alias 'vi'="nvim $@"
 
 # git aliases
 alias gst="git status"
@@ -24,30 +24,30 @@ alias dp="docker ps -a | docker-color-output"
 alias dP="docker ps | docker-color-output"
 # alias dp="docker ps -a"
 # alias dP="docker ps"
-alias dl="docker logs -f"
-alias dL="docker logs"
-alias dpl="docker pull "
+alias dl="docker logs -f $@"
+alias dL="docker logs $@"
+alias dpl="docker pull $@"
 alias db="docker build"
-alias drm="docker rm"
-alias dr="docker run"
+alias drm="docker rm $@"
+alias dr="docker run $@"
 alias dx="docker exec -it $@"
-alias dS="docker stop"
-alias ds="docker start"
+alias dS="docker stop $@"
+alias ds="docker start $@"
 
 # docker image aliases
 alias di="docker images | docker-color-output"
 # alias di="docker images"
-alias dri="docker rmi"
+alias dri="docker rmi $@"
 
 # docker compose aliases
 alias dc="docker compose ps -a | docker-color-output"
 alias dcu="docker compose up --build"
-alias dcb="docker compose build"
-alias dcd="docker compose down"
+alias dcb="docker compose build $@"
+alias dcd="docker compose down $@"
 
 # docker volume aliases
-alias dvl="docker volume ls"
-alias dvp="docker volume prune"
+alias dvl="docker volume ls $@"
+alias dvp="docker volume prune $@"
 
 # fan aliases
 alias fan="sudo bash ~/.config/qtile/.init-scripts/fan-speed.sh"
@@ -86,8 +86,8 @@ alias ztail="zcat $1 | tail"
 alias zhead="zcat $1 | head"
 
 alias sccvpn="~/.scripts/scc-vpn-auth.sh"
-alias lg="lazygit"
+alias lg="lazygit $@"
 alias ls="exa --long"
-alias top="btop"
+alias top="btop $@"
 alias ks="kitty +kitten ssh"
 alias upnpm="pnpm i -g pnpm && rm -rf '~'"
