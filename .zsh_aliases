@@ -33,6 +33,7 @@ alias dr="docker run $@"
 alias dx="docker exec -it $@"
 alias dS="docker stop $@"
 alias ds="docker start $@"
+alias dR="docker restart $@"
 
 # docker image aliases
 alias di="docker images | docker-color-output"
