@@ -1,6 +1,6 @@
 # zsh plugin auto completetion
-bindkey "\el" autosuggest-accept
-bindkey ";" autosuggest-execute
+bindkey "^@" autosuggest-accept
+bindkey "^M" autosuggest-execute
 
 # text-modifier keys
 bindkey "^[u" backward-delete-word
