@@ -78,6 +78,21 @@ function git_ultimate {
 
 alias ggu="noglob git_ultimate"
 
+function git_ultimateV2 {
+   lint_result=$(echo "$*" | commitlint | grep ✖)
+
+   if [[ -z $lint_result ]] then
+      git commit -m "$*"
+      git pull
+      git push
+   else
+      echo "commit msg not valid:"
+      echo $lint_result
+   fi
+}
+
+alias gcu="noglob git_ultimateV2"
+
 # zipped file aliases
 function ztac {
    zcat $1 | tac
