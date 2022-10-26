@@ -185,3 +185,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pip binary directory
 export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "/home/mdd255/.bun/_bun" ] && source "/home/mdd255/.bun/_bun"
