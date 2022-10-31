@@ -78,7 +78,7 @@ function git_ultimate {
 
 alias ggu="noglob git_ultimate"
 
-function git_ultimateV2 {
+function git_ultimate_v2 {
    lint_result=$(echo "$*" | commitlint | grep ✖)
 
    if [[ -z $lint_result ]] then
@@ -91,7 +91,7 @@ function git_ultimateV2 {
    fi
 }
 
-alias gcu="noglob git_ultimateV2"
+alias gu="noglob git_ultimate_v2"
 
 # zipped file aliases
 function ztac {
