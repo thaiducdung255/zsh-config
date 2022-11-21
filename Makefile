@@ -5,6 +5,7 @@ zsh-install:
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 	rm ~/.zshrc
 	sudo ln -sf ~/.config/zsh/.zshrc ~/.zshrc
+	sudo ln -sf ~/.config/zsh/.zshenv ~/.cargo/env
 	sudo ln -sf ~/.config/zsh/.p10k.zsh ~/.p10k.zsh
 
 font-install:
