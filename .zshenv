@@ -1,14 +1,4 @@
 #!/bin/sh
-# rustup shell setup
-# affix colons on either side of $PATH to simplify matching
-# case ":${PATH}:" in
-#     *:"$HOME/.cargo/bin":*)
-#         ;;
-#     *)
-#         # Prepending path in case a system-installed rustc needs to be overridden
-#         export PATH="$HOME/.cargo/bin:$PATH"
-#         ;;
-# esac
 
 # sys envs
 export LANG=en_US.UTF-8
@@ -106,7 +96,7 @@ case ":${PATH}:" in
       ;;
    *)
       export PATH=~/.fnm:$PATH
-      # eval "$(fnm env)"
+      export PATH=~/.fnm/node-versions/v18.6.0/installation/bin:$PATH
       ;;
 esac
 
