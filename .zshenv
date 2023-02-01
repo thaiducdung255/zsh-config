@@ -6,6 +6,7 @@ export LC_ALL="en_US.UTF-8"
 export ARCHFLAGS="-arch x86_64"
 export EDITOR=nvim
 export VISUAL=nvim
+export BROWSER=/usr/bin/brave
 
 # ibus envs
 export GTK_IM_MODULE=ibus
