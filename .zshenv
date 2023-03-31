@@ -91,6 +91,13 @@ case ":${PATH}:" in
       ;;
 esac
 
+# homebrew envs
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+
+# fig envs
+export PATH=$HOME/.fig/bin:$PATH
+
 # fnm envs
 case ":${PATH}:" in
    *:"$HOME/.fnm":*)

@@ -23,8 +23,6 @@ alias gck="git checkout"
 # docker aliases
 alias dp="docker ps -a | docker-color-output"
 alias dP="docker ps | docker-color-output"
-# alias dp="docker ps -a"
-# alias dP="docker ps"
 alias dl="docker logs -f $@"
 alias dL="docker logs $@"
 alias dpl="docker pull $@"
@@ -102,7 +100,6 @@ function ztac {
 alias ztail="zcat $1 | tail"
 alias zhead="zcat $1 | head"
 
-alias sccvpn="~/.scripts/scc-vpn-auth.sh"
 alias lg="lazygit $@"
 alias ls="exa --long"
 alias top="btop $@"
