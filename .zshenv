@@ -33,6 +33,7 @@ export FZF_DEFAULT_COMMAND='ag -g "" \
   --ignore ".vim/*" \
   --ignore "package-lock.json" \
   --ignore ".idea/*" \
+  --ignore ".eclipse/*" \
   --ignore "skypeforlinux/*" \
   --ignore "MongoDB Compass/*" \
   --ignore "libreoffice/*" \

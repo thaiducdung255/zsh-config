@@ -49,7 +49,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting pipenv)
 # enable fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
 [ -s /etc/zsh/zprofile ] && source "/etc/zsh/zprofile"
 
 # User configuration
@@ -59,7 +59,7 @@ source $HOME/.config/zsh/.zsh_aliases
 source $HOME/.config/zsh/.zsh_custom_keys
 
 # fnm
-export PATH=~/.fnm:$PATH
+export PATH=~/.local/share/fnm:$PATH
 eval "`fnm --version-file-strategy=recursive --log-level=quiet env --use-on-cd`"
 
 zstyle ':completion:*' matcher-list '' \
