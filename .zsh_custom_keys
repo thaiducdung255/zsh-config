@@ -44,10 +44,17 @@ fd_extra_args="
 	--exclude /.local/lib\
 	"
 
+fzf-gbr() {
+	LBUFFER="$LBUFFER git checkout $(gbr -a | fzf --no-preview)"
+  zle accept-line
+}
+zle -N fzf-gbr
+bindkey "\eb" fzf-gbr
+
 # fzf edit file
 fzf-vi() {
 	LBUFFER="$LBUFFER vi $(fd --type f $(echo $fd_extra_args) $HOME | fzf)"
-		zle accept-line
+  zle accept-line
 }
 zle -N fzf-vi
 bindkey "\e;" fzf-vi

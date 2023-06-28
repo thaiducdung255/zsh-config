@@ -58,6 +58,9 @@ source $HOME/.config/zsh/.zsh_aliases
 # bindkey
 source $HOME/.config/zsh/.zsh_custom_keys
 
+# env
+source $HOME/.config/zsh/.zsh_env
+
 # fnm
 export PATH=~/.local/share/fnm:$PATH
 eval "`fnm --version-file-strategy=recursive --log-level=quiet env --use-on-cd`"
