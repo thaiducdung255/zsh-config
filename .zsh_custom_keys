@@ -44,6 +44,32 @@ fd_extra_args="
 	--exclude /.local/lib\
 	"
 
+jira() {
+  echo -n "Jira ticket ID: "
+  read -r ticket_id
+  typeset -u ticket_id="$ticket_id"
+  ticket_id=${ticket_id// /-}
+
+  echo -n "Commit type: "
+  read -r commit_type
+
+  echo -n "Commit scope: "
+  IFS= read -r commit_scope
+  commit_scope=${commit_scope// /-}
+
+  echo -n "Commit message: "
+  IFS= read -r commit_message
+  dashed_commit_message="${commit_message// /-}"
+
+  git pull
+  git checkout -b ${commit_type}/${ticket_id}-${dashed_commit_message}
+  git add .
+  git commit --no-verify -m "${commit_type}(${commit_scope}): [${ticket_id}] ${commit_message}"
+  git push
+}
+zle -N jira
+bindkey "\ep" jira
+
 fzf-gbr() {
 	LBUFFER="$LBUFFER git checkout $(gbr -a | fzf --no-preview)"
   zle accept-line
@@ -64,7 +90,6 @@ fzf-cd () {
    LBUFFER="$LBUFFER cd $(fd --type d $(echo $fd_extra_args) $HOME | fzf --preview '')"
    zle accept-line
 }
-
 zle -N fzf-cd
 bindkey "\e " fzf-cd
 
@@ -72,7 +97,6 @@ bindkey "\e " fzf-cd
 fzf-file(){
   LBUFFER="$LBUFFER $(fd --type f $(echo $fd_extra_args) $HOME | fzf)"
 }
-
 zle -N fzf-file
 bindkey "\ef" fzf-file
 
@@ -80,6 +104,19 @@ bindkey "\ef" fzf-file
 fzf-dir(){
   LBUFFER="$LBUFFER $(fd --type d $(echo $fd_extra_args) $HOME | fzf --preview '')"
 }
-
 zle -N fzf-dir
 bindkey "\ed" fzf-dir
+
+my_widget() {
+  # List of texts
+  texts=("Text 1" "Text 2" "Text 3" "Text 4" "Text 5")
+
+  # Use fzf to select a text
+  selected_text=$(printf "%s\n" "${texts[@]}" | fzf --no-preview)
+
+  echo "Selected text: $selected_text"
+}
+
+# Bind the function to a key combination
+zle -N my-widget my_widget
+bindkey '\ei' my-widget
