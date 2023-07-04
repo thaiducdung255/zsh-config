@@ -75,7 +75,7 @@ fzf-gbr() {
   branch="${branch/remotes\/origin\//}"
   branch="${branch/\*/}"
   branch="${branch// /}"
-	LBUFFER="$LBUFFER git checkout ${branch}"
+	LBUFFER="$LBUFFER git checkout ${branch} && git pull"
   zle accept-line
 }
 zle -N fzf-gbr
@@ -116,17 +116,3 @@ fzf-dir(){
 }
 zle -N fzf-dir
 bindkey "\ed" fzf-dir
-
-my_widget() {
-  # List of texts
-  texts=("Text 1" "Text 2" "Text 3" "Text 4" "Text 5")
-
-  # Use fzf to select a text
-  selected_text=$(printf "%s\n" "${texts[@]}" | fzf --no-preview)
-
-  echo "Selected text: $selected_text"
-}
-
-# Bind the function to a key combination
-zle -N my-widget my_widget
-bindkey '\ei' my-widget
