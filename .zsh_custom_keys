@@ -71,7 +71,11 @@ zle -N jira
 bindkey "\ep" jira
 
 fzf-gbr() {
-	LBUFFER="$LBUFFER git checkout $(gbr -a | fzf --no-preview)"
+  branch="$(gbr -a | fzf --no-preview)"
+  branch="${branch/remotes\/origin\//}"
+  branch="${branch/\*/}"
+  branch="${branch// /}"
+	LBUFFER="$LBUFFER git checkout ${branch}"
   zle accept-line
 }
 zle -N fzf-gbr
@@ -87,8 +91,14 @@ bindkey "\e;" fzf-vi
 
 # fzf auto cd
 fzf-cd () {
-   LBUFFER="$LBUFFER cd $(fd --type d $(echo $fd_extra_args) $HOME | fzf --preview '')"
-   zle accept-line
+   dir="$(fd --type d $(echo $fd_extra_args) $HOME | fzf --preview '')"
+   dir="${dir// /}"
+   dir_len="${#dir}"
+
+   if (($dir_len > 0)); then
+     LBUFFER="$LBUFFER cd ${dir}"
+     zle accept-line
+   fi
 }
 zle -N fzf-cd
 bindkey "\e " fzf-cd

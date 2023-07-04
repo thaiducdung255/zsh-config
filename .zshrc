@@ -61,20 +61,7 @@ source $HOME/.config/zsh/.zsh_custom_keys
 # env
 source $HOME/.config/zsh/.zsh_env
 
-# fnm
-export PATH=~/.local/share/fnm:$PATH
-eval "`fnm --version-file-strategy=recursive --log-level=quiet env --use-on-cd`"
-
 zstyle ':completion:*' matcher-list '' \
   'm:{a-z\-}={A-Z\_}' \
   'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
-
-# cython
-export PATH="/opt/homebrew/opt/cython/bin:$PATH"
-
-# Created by `pipx` on 2023-03-27 04:06:35
-export PATH="$PATH:/Users/lap15065/Library/Python/3.11/bin"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
