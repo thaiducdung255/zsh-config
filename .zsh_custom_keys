@@ -14,6 +14,7 @@ bindkey "^[q" kill-line
 fd_extra_args="
    --hidden .\
    --ignore-case\
+   --max-depth 5\
 	--exclude node_modules\
 	--exclude .fnm\
 	--exclude .npm\
@@ -42,6 +43,8 @@ fd_extra_args="
 	--exclude pack\
 	--exclude TabNine\
 	--exclude /.local/lib\
+	--exclude /.local/share/DBeaverData\
+	--exclude .eclipse\
 	"
 
 jira() {
@@ -71,11 +74,11 @@ zle -N jira
 bindkey "\ep" jira
 
 fzf-gbr() {
-  branch="$(gbr -a | fzf --no-preview)"
+  branch="$(gbr | sort -fr | fzf --no-preview)"
   branch="${branch/remotes\/origin\//}"
   branch="${branch/\*/}"
   branch="${branch// /}"
-	LBUFFER="$LBUFFER git checkout ${branch} && git pull"
+	LBUFFER="$LBUFFER git checkout ${branch}"
   zle accept-line
 }
 zle -N fzf-gbr
