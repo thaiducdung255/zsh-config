@@ -65,3 +65,11 @@ zstyle ':completion:*' matcher-list '' \
   'm:{a-z\-}={A-Z\_}' \
   'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
+
+# fnm
+export PATH="/home/mdd255/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+# fnm
+export PATH="/home/mdd255/.local/share/fnm:$PATH"
+eval "`fnm env`"
