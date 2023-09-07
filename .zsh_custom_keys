@@ -7,7 +7,6 @@ bindkey "^[k" backward-delete-word
 bindkey "^[m" forward-delete-word
 
 bindkey "^[b" backward-word
-# bindkey "^[b" forward-word
 bindkey "^[q" kill-line
 
 # fzf custom keys
@@ -47,6 +46,19 @@ fd_extra_args="
 	--exclude .eclipse\
 	"
 
+code() {
+   dir="$(fd --type d $(echo $fd_extra_args) $HOME | fzf --preview '')"
+   dir="${dir// /}"
+   dir_len="${#dir}"
+
+   if (($dir_len > 0)); then
+     LBUFFER="$LBUFFER cd ${dir} && nvim"
+     zle accept-line
+   fi
+}
+zle -N code
+bindkey "\en" code
+
 jira() {
   echo -n "Jira ticket ID: "
   read -r ticket_id
@@ -70,11 +82,9 @@ jira() {
   git commit --no-verify -m "${commit_type}(${commit_scope}): [${ticket_id}] ${commit_message}"
   git push
 }
-zle -N jira
-bindkey "\ep" jira
 
 fzf-gbr() {
-  branch="$(gbr | sort -fr | fzf --no-preview)"
+  branch="$(gbr -a | sed 's/remotes\/origin\///' | sort -fnr | uniq | fzf --no-preview)"
   branch="${branch/remotes\/origin\//}"
   branch="${branch/\*/}"
   branch="${branch// /}"

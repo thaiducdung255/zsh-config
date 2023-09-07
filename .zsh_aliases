@@ -22,6 +22,10 @@ alias gbl="git blame"
 alias gck="git checkout $@"
 alias gsi="git stash"
 alias gso="git stash pop"
+alias gsc="git stash drop"
+alias gcp="git cherry-pick $@"
+alias gcc="git cherry-pick --abort"
+alias grb="git rebase -i HEAD~$@"
 
 # docker aliases
 alias dp="docker ps -a | docker-color-output"
