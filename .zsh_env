@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # sys envs
-export OPENAI_API_KEY=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
+export OPENAI_API_KEY=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
 export LANG=en_US.UTF-8
 export LC_ALL="en_US.UTF-8"
 export ARCHFLAGS="-arch x86_64"
