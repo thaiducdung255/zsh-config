@@ -1,5 +1,8 @@
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 zsh-install:
-	# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	rm -rf ~/.oh-my-zsh/plugins/zsh-autosuggestions
+	rm -rf ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+	rm -rf ~/.oh-my-zsh/themes/powerlevel10k
 	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
@@ -23,8 +26,9 @@ fnm-install:
 	echo "module.exports = {extends: ['@commitlint/config-conventional']}" > ~/commitlint.config.js
 
 extra-packs-install:
+	rm -rf ~/Apps/docker-color-output
 	sudo pacman -S --noconfirm exa docker jq docker-compose unzip btop ibus go xorg-xev pavucontrol pipewire-audio pipewire-pulse zip
-	yay -S --noconfirm ibus-bamboo
+	# yay -S --noconfirm ibus-bamboo
 	mkdir -p ~/Apps
 	git clone https://github.com/devemio/docker-color-output.git ~/Apps/docker-color-output
 	make build -C ~/Apps/docker-color-output

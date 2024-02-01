@@ -84,17 +84,20 @@ function git_ultimate {
 
 alias ggu="noglob git_ultimate"
 
-function git_ultimate_v2 {
-   lint_result=$(echo "$*" | commitlint | grep ✖)
+# function check_repo() {
+#   cloud_provider_repo="$(pwd | grep 'cloud-provider-driver')"
+#   is_cloud_provider_repo="${#cloud_provider_repo}"
+#
+#   if ((is_cloud_provider_repo > 0)); then
+#     git restore --staged src/main.ts src/common/interceptors/current-user.interceptor.ts src/modules/prisma/prisma.service.ts
+#   fi
+# }
 
-   if [[ -z $lint_result ]] then
-      git commit -m "$*"
-      git pull
-      git push
-   else
-      echo "commit msg not valid:"
-      echo $lint_result
-   fi
+function git_ultimate_v2 {
+  git add .
+  git restore --staged src/main.ts src/common/interceptors/current-user.interceptor.ts src/modules/prisma/prisma.service.ts
+  git commit -n -m "$*"
+  git push
 }
 
 alias gu="noglob git_ultimate_v2"

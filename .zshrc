@@ -70,6 +70,5 @@ zstyle ':completion:*' matcher-list '' \
 export PATH="/home/mdd255/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
-# fnm
-export PATH="/home/mdd255/.local/share/fnm:$PATH"
-eval "`fnm env`"
+# bun completions
+[ -s "/home/dh/.bun/_bun" ] && source "/home/dh/.bun/_bun"
